@@ -10,14 +10,12 @@ class Solution:
         while f<n-1:
             #check if height[f] < to at least one of the heights
             maxtemp=max(height[f+1:])
-            print(height[f],maxtemp)
             if height[f]==0: 
                 f+=1
                 l=f+1
-            elif  height[f]>maxtemp:
+            elif  height[f]>maxtemp:#another height must be equL to the current one 
                 height[f]=maxtemp
             elif height[f]>height[l]:
-                print("entrato  ",height[f],height[l])
                 water+=height[f]-height[l]
                 l+=1
             else:
