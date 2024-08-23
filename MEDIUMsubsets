@@ -1,0 +1,37 @@
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        def backtrack(start,curpair):
+            flag=curpair in ans
+            if flag==True:
+                return
+
+            ans.append(list(curpair))    
+            for i in range(start, n):
+                curpair.append(nums[i])
+                backtrack(i+1,curpair)
+                curpair.pop()
+        
+        ans=[]
+        n=len(nums)
+        backtrack(0,[])
+        return ans
+
+
+WITH NUMS containing unique values
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        def backtrack(start,curpair):
+            flag=curpair in ans
+            if flag==True:
+                return
+
+            ans.append(list(curpair))    
+            for i in range(start, n):
+                curpair.append(nums[i])
+                backtrack(i+1,curpair)
+                curpair.pop()
+        
+        ans=[]
+        n=len(nums)
+        backtrack(0,[])
+        return ans
