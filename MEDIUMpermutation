@@ -14,4 +14,27 @@ class Solution:
         ans=[]
         backtrack([])
         return ans
-        
+
+
+#CHATGPT
+#uses a bool array to check if an element has been already used
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        def backtrack(curpair):
+            if len(curpair) == n:
+                ans.append(list(curpair))
+                return
+            for i in range(n):
+                if not used[i]:  # Check if the element is used
+                    used[i] = True
+                    curpair.append(nums[i])
+                    backtrack(curpair)
+                    curpair.pop()
+                    used[i] = False  # Reset the used state for backtracking
+
+        n = len(nums)
+        ans = []
+        used = [False] * n  # Initialize used tracker
+        backtrack([])
+        return ans
+
