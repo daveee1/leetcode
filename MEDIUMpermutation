@@ -1,0 +1,17 @@
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        def backtrack(curpair):
+            if len(curpair)==n:
+                ans.append(list(curpair))
+                return
+            for i in range(0,n):
+                if nums[i] not in curpair:
+                    curpair.append(nums[i])
+                    backtrack(curpair)
+                    curpair.pop()
+
+        n=len(nums)
+        ans=[]
+        backtrack([])
+        return ans
+        
